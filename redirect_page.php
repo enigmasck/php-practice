@@ -1,7 +1,11 @@
 <?php
 session_start();
 
-if(count($POST) > 0){
+//ini_set('display_errors', 'On');
+//error_reporting(E_ALL);
+
+echo count($POST);
+if(count($POST['yourName']) > 0){
     $myForm['yourName'] = $_POST['yourName'];
     $myForm['yourAge'] = $_POST['yourAge'];
     
@@ -11,8 +15,7 @@ if(count($POST) > 0){
     header("Location: http://$_SERVER[HTTP_HOST]/action.php");
     die();
 } else if(isset($_SESSION['savedForm'])) {
-    
-    
+   
     session_unset();
     session_destroy();
 }

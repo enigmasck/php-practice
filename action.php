@@ -1,6 +1,12 @@
 <?php
+session_start();
+echo '<p>Your name is: '.htmlspecialchars($_SESSION['savedForm']['yourName']).'</p>';
+echo '<p>You age is: '.htmlspecialchars($_SESSION['savedForm']['yourAge']).'</p>';
 
-echo '<p>Your name is: '.htmlspecialchars($_POST['name']).'</p>';
-echo '<p>You age is: '.htmlspecialchars($_POST['age']).'</p>';
+if(isset($_SESSION['savedForm'])) {
+   
+    //session_unset();
+    //session_destroy();
+}
 
 ?>

@@ -11,7 +11,9 @@ if(count($_POST['yourName']) > 0){
     $myForm['yourAge'] = $_POST['yourAge'];
     
     $_SESSION['savedForm'] = $myForm;
-    echo '<pre>'.var_dump($_SERVER['SCRIPT_FILENAME']).'</pre>';
+    $theUrl = explode ('/',$_SERVER['REQUEST_URI']);
+    echo '<pre>'.var_dump($theUrl).'</pre>';
+    echo '<pre>'.var_dump($_SERVER['HTTP_HOST']).'</pre>';
     header("HTTP/1.1 303 See Other");
     //header("Location: http://$_SERVER[HTTP_HOST]/action.php");
     die();
